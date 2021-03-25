@@ -67,13 +67,20 @@ namespace ComparingFiles
                     Console.WriteLine($"{i}:-");
                     Console.ResetColor();
                 }
-                else if (!Info.firstFile[i].Equals(Info.secondFile[i]))
+                else
                 {
-                    Console.WriteLine($"{i}:"+Info.firstFile[i]);
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"{i}:~" + Info.secondFile[i]);
-                    Console.ResetColor();
+                    IsEdited(i);
                 }
+            }
+        }
+        private static void IsEdited(int i)
+        {
+            if (!Info.firstFile[i].Equals(Info.secondFile[i]))
+            {
+                Console.WriteLine($"{i}:" + Info.firstFile[i]);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"{i}:~" + Info.secondFile[i]);
+                Console.ResetColor();
             }
         }
         
